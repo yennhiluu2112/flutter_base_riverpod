@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "345070362940",
+    "project_id": "flutterriverpod-e903b",
+    "storage_bucket": "flutterriverpod-e903b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345070362940:android:6bf4c3b807bf086c223e39",
+        "android_client_info": {
+          "package_name": "com.example.flutter_base_riverpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0EV_tRsd5YNOqomynBsxm4ZSN_oqzoBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
