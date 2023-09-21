@@ -12,7 +12,7 @@ import '../utils/constants.dart';
 final appSetingsRepositoryProvider = Provider(
   (ref) {
     return _AppSettingsRepositoryImpl(
-      Hive.box(Constants.hiveDataBox),
+      Hive.box<String>(Constants.hiveDataBox),
     );
   },
 );

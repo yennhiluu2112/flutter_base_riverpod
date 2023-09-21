@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../enums/app_locale.dart';
+import '../../../gen/strings.g.dart';
 import '../../enums/app_theme.dart';
 
 part 'app_settings.freezed.dart';
@@ -9,7 +9,7 @@ part 'app_settings.g.dart';
 @freezed
 class AppSettings with _$AppSettings {
   factory AppSettings({
-    @Default(AppLocale.auto) AppLocale locale,
+    @Default(AppLocale.en) AppLocale locale,
     @Default(AppTheme.auto) AppTheme theme,
     @Default(true) bool isFirstLaunch,
   }) = _AppSettings;

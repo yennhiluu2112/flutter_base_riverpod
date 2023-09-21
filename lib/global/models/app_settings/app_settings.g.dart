@@ -9,7 +9,7 @@ part of 'app_settings.dart';
 _$_AppSettings _$$_AppSettingsFromJson(Map<String, dynamic> json) =>
     _$_AppSettings(
       locale: $enumDecodeNullable(_$AppLocaleEnumMap, json['locale']) ??
-          AppLocale.auto,
+          AppLocale.en,
       theme: $enumDecodeNullable(_$AppThemeEnumMap, json['theme']) ??
           AppTheme.auto,
       isFirstLaunch: json['isFirstLaunch'] as bool? ?? true,
@@ -23,9 +23,8 @@ Map<String, dynamic> _$$_AppSettingsToJson(_$_AppSettings instance) =>
     };
 
 const _$AppLocaleEnumMap = {
-  AppLocale.auto: 'auto',
-  AppLocale.viVN: 'viVN',
-  AppLocale.enUs: 'enUs',
+  AppLocale.en: 'en',
+  AppLocale.viVn: 'viVn',
 };
 
 const _$AppThemeEnumMap = {

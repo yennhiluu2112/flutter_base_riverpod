@@ -1,0 +1,15 @@
+{
+    "hello": "Hallo $name",
+    "save": "Speichern",
+    "login": {
+        "success": "Logged in successfully",
+        "fail": "Đăng nhập thất bại",
+        "title": "Đăng nhập",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "emailRequired": "Bạn chưa nhập email",
+        "passwordRequired": "Bạn chưa nhập mật khẩu",
+        "emailHint": "Nhập email của bạn",
+        "passwordHint": "Nhập mật khẩu của bạn"
+    }
+}

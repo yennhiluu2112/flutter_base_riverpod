@@ -1,0 +1,15 @@
+{
+    "hello": "Hello $name",
+    "save": "Save",
+    "login": {
+        "success": "Logged in successfully",
+        "fail": "Logged in failed",
+        "title": "Login",
+        "email": "Email",
+        "password": "Password",
+        "emailRequired": "Email is required",
+        "passwordRequired": "Password is required",
+        "emailHint": "Enter your email",
+        "passwordHint": "Enter your password"
+    }
+}

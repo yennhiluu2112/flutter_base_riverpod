@@ -120,7 +120,7 @@ class __$$_AppSettingsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_AppSettings implements _AppSettings {
   _$_AppSettings(
-      {this.locale = AppLocale.auto,
+      {this.locale = AppLocale.en,
       this.theme = AppTheme.auto,
       this.isFirstLaunch = true});
 
