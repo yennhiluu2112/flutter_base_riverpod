@@ -10,6 +10,19 @@
         "emailRequired": "Bạn chưa nhập email",
         "passwordRequired": "Bạn chưa nhập mật khẩu",
         "emailHint": "Nhập email của bạn",
-        "passwordHint": "Nhập mật khẩu của bạn"
+        "passwordHint": "Nhập mật khẩu của bạn",
+        "emailInvalid": "Vui lòng nhập đúng email"
+    },
+    "signUp": {
+        "title": "Đăng ký",
+        "success": "Đăng ký tài khoản thành công",
+        "fail": "Đăng ký tài khoản không thành công",
+        "fullName": "Họ tên",
+        "fullNameHint": "Nhập họ tên của bạn",
+        "fullNameRequired": "Bạn chưa nhập họ tê ",
+        "confirmPassword": "Xác nhận mật khẩu",
+        "confirmPasswordHint": "Nhập lại mật khẩu",
+        "confirmPasswordRequired": "Bạn chưa xác nhận mật khẩu",
+        "passwordNotMatch": "Mật khẩu không khớp"
     }
 }

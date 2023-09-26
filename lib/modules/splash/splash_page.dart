@@ -18,7 +18,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await Future.delayed(const Duration(milliseconds: 1000));
       if (mounted) {
-        context.router.push(const MainRoute());
+        context.router.replaceAll([const MainRoute()]);
       }
     });
     super.initState();

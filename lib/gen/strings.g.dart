@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 22 (11 per locale)
+/// Strings: 44 (22 per locale)
 ///
-/// Built on 2023-09-21 at 10:20 UTC
+/// Built on 2023-09-26 at 03:07 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -153,6 +153,7 @@ class _StringsEn implements BaseTranslations<AppLocale, _StringsEn> {
 	String hello({required Object name}) => 'Hello ${name}';
 	String get save => 'Save';
 	late final _StringsLoginEn login = _StringsLoginEn._(_root);
+	late final _StringsSignUpEn signUp = _StringsSignUpEn._(_root);
 }
 
 // Path: login
@@ -171,6 +172,26 @@ class _StringsLoginEn {
 	String get passwordRequired => 'Password is required';
 	String get emailHint => 'Enter your email';
 	String get passwordHint => 'Enter your password';
+	String get emailInvalid => 'Email is invalid';
+}
+
+// Path: signUp
+class _StringsSignUpEn {
+	_StringsSignUpEn._(this._root);
+
+	final _StringsEn _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Sign Up';
+	String get success => 'Signed up successfully';
+	String get fail => 'Signed up failed';
+	String get fullName => 'Full Name';
+	String get fullNameHint => 'Enter your full name';
+	String get fullNameRequired => 'Full name is required';
+	String get confirmPassword => 'Confirm password';
+	String get confirmPasswordHint => 'Re-enter your password';
+	String get confirmPasswordRequired => 'Confirm password is required';
+	String get passwordNotMatch => 'Password not match';
 }
 
 // Path: <root>
@@ -201,6 +222,7 @@ class _StringsViVn implements _StringsEn {
 	@override String hello({required Object name}) => 'Hallo ${name}';
 	@override String get save => 'Speichern';
 	@override late final _StringsLoginViVn login = _StringsLoginViVn._(_root);
+	@override late final _StringsSignUpViVn signUp = _StringsSignUpViVn._(_root);
 }
 
 // Path: login
@@ -219,6 +241,26 @@ class _StringsLoginViVn implements _StringsLoginEn {
 	@override String get passwordRequired => 'Bạn chưa nhập mật khẩu';
 	@override String get emailHint => 'Nhập email của bạn';
 	@override String get passwordHint => 'Nhập mật khẩu của bạn';
+	@override String get emailInvalid => 'Vui lòng nhập đúng email';
+}
+
+// Path: signUp
+class _StringsSignUpViVn implements _StringsSignUpEn {
+	_StringsSignUpViVn._(this._root);
+
+	@override final _StringsViVn _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Đăng ký';
+	@override String get success => 'Đăng ký tài khoản thành công';
+	@override String get fail => 'Đăng ký tài khoản không thành công';
+	@override String get fullName => 'Họ tên';
+	@override String get fullNameHint => 'Nhập họ tên của bạn';
+	@override String get fullNameRequired => 'Bạn chưa nhập họ tê ';
+	@override String get confirmPassword => 'Xác nhận mật khẩu';
+	@override String get confirmPasswordHint => 'Nhập lại mật khẩu';
+	@override String get confirmPasswordRequired => 'Bạn chưa xác nhận mật khẩu';
+	@override String get passwordNotMatch => 'Mật khẩu không khớp';
 }
 
 /// Flat map(s) containing all translations.
@@ -238,6 +280,17 @@ extension on _StringsEn {
 			case 'login.passwordRequired': return 'Password is required';
 			case 'login.emailHint': return 'Enter your email';
 			case 'login.passwordHint': return 'Enter your password';
+			case 'login.emailInvalid': return 'Email is invalid';
+			case 'signUp.title': return 'Sign Up';
+			case 'signUp.success': return 'Signed up successfully';
+			case 'signUp.fail': return 'Signed up failed';
+			case 'signUp.fullName': return 'Full Name';
+			case 'signUp.fullNameHint': return 'Enter your full name';
+			case 'signUp.fullNameRequired': return 'Full name is required';
+			case 'signUp.confirmPassword': return 'Confirm password';
+			case 'signUp.confirmPasswordHint': return 'Re-enter your password';
+			case 'signUp.confirmPasswordRequired': return 'Confirm password is required';
+			case 'signUp.passwordNotMatch': return 'Password not match';
 			default: return null;
 		}
 	}
@@ -257,6 +310,17 @@ extension on _StringsViVn {
 			case 'login.passwordRequired': return 'Bạn chưa nhập mật khẩu';
 			case 'login.emailHint': return 'Nhập email của bạn';
 			case 'login.passwordHint': return 'Nhập mật khẩu của bạn';
+			case 'login.emailInvalid': return 'Vui lòng nhập đúng email';
+			case 'signUp.title': return 'Đăng ký';
+			case 'signUp.success': return 'Đăng ký tài khoản thành công';
+			case 'signUp.fail': return 'Đăng ký tài khoản không thành công';
+			case 'signUp.fullName': return 'Họ tên';
+			case 'signUp.fullNameHint': return 'Nhập họ tên của bạn';
+			case 'signUp.fullNameRequired': return 'Bạn chưa nhập họ tê ';
+			case 'signUp.confirmPassword': return 'Xác nhận mật khẩu';
+			case 'signUp.confirmPasswordHint': return 'Nhập lại mật khẩu';
+			case 'signUp.confirmPasswordRequired': return 'Bạn chưa xác nhận mật khẩu';
+			case 'signUp.passwordNotMatch': return 'Mật khẩu không khớp';
 			default: return null;
 		}
 	}

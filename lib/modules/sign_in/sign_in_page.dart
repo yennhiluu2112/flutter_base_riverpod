@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_base_riverpod/gen/assets.gen.dart';
 import 'package:flutter_base_riverpod/global/utils/app_state.dart';
 import 'package:flutter_base_riverpod/global/widgets/loading_overlay.dart';
 import 'package:flutter_base_riverpod/modules/sign_in/sign_in_provider.dart';
@@ -45,7 +46,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
       (_, next) {
         next.whenOrNull(
           data: (data, _) {
-            context.router.push(const MainRoute());
+            context.router.replaceAll([const MainRoute()]);
           },
           error: (e) => print(e),
         );
@@ -60,6 +61,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
+              Assets.images.hello.image(),
               Label(i18n.login.email),
               FormBuilderTextField(
                 name: 'email',
@@ -70,7 +72,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 validator: FormBuilderValidators.compose(
                   [
                     FormBuilderValidators.email(
-                      errorText: 'Login.EmailInvalid',
+                      errorText: i18n.login.emailInvalid,
                     ),
                     FormBuilderValidators.required(
                       errorText: i18n.login.emailRequired,
@@ -122,7 +124,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
                 onPressed: () {
                   context.router.push(const SignUpRoute());
                 },
-                child: const Text('Signup.Title'),
+                child: Text(i18n.signUp.title),
               ),
             ],
           ),

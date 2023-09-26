@@ -10,6 +10,19 @@
         "emailRequired": "Email is required",
         "passwordRequired": "Password is required",
         "emailHint": "Enter your email",
-        "passwordHint": "Enter your password"
+        "passwordHint": "Enter your password",
+        "emailInvalid": "Email is invalid"
+    },
+    "signUp": {
+        "title": "Sign Up",
+        "success": "Signed up successfully",
+        "fail": "Signed up failed",
+        "fullName": "Full Name",
+        "fullNameHint": "Enter your full name",
+        "fullNameRequired": "Full name is required",
+        "confirmPassword": "Confirm password",
+        "confirmPasswordHint": "Re-enter your password",
+        "confirmPasswordRequired": "Confirm password is required",
+        "passwordNotMatch": "Password not match"
     }
 }

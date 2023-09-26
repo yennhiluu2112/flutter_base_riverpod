@@ -71,6 +71,7 @@ class _AuthRepositoryImpl extends BaseRepository implements AuthRepository {
 
       if (userCredential.user != null) {
         await firebaseAuth.currentUser?.updateDisplayName(fullName);
+        await firebaseAuth.signOut();
       }
 
       return unit;
