@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base_riverpod/gen/assets.gen.dart';
+import 'package:flutter_base_riverpod/global/repositories/user_repository.dart';
 import 'package:flutter_base_riverpod/global/utils/app_state.dart';
 import 'package:flutter_base_riverpod/global/widgets/loading_overlay.dart';
 import 'package:flutter_base_riverpod/modules/sign_in/sign_in_provider.dart';
@@ -25,6 +26,7 @@ class _SignInPageState extends ConsumerState<SignInPage> {
   final formKey = GlobalKey<FormBuilderState>();
   bool passwordObscure = true;
   late final provider = ref.watch(signInProvider.notifier);
+  late final userProvider = ref.watch(userRepositoryProvider);
 
   void login() {
     FocusManager.instance.primaryFocus?.unfocus();

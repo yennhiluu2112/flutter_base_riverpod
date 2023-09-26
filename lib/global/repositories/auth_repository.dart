@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_base_riverpod/global/models/failure.dart';
 import 'package:flutter_base_riverpod/global/repositories/_base_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../models/failure/failure.dart';
 
 final authRepositoryProvider = Provider((ref) => _AuthRepositoryImpl());
 
@@ -14,7 +15,7 @@ abstract class AuthRepository {
 
   Future<Either<Failure, Unit>> signOut();
 
-  Future<Either<Failure, Unit>> signUpWithEmailPassword({
+  Future<Either<Failure, UserCredential>> signUpWithEmailPassword({
     required String fullName,
     required String email,
     required String password,
@@ -59,7 +60,7 @@ class _AuthRepositoryImpl extends BaseRepository implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> signUpWithEmailPassword(
+  Future<Either<Failure, UserCredential>> signUpWithEmailPassword(
       {required String fullName,
       required String email,
       required String password}) {
@@ -74,7 +75,7 @@ class _AuthRepositoryImpl extends BaseRepository implements AuthRepository {
         await firebaseAuth.signOut();
       }
 
-      return unit;
+      return userCredential;
     });
   }
 }

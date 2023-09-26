@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../models/failure.dart';
+import '../models/failure/failure.dart';
 
 class BaseRepository {
   Future<Either<Failure, T>> guardFuture<T>(

@@ -57,7 +57,7 @@ class AppThemes {
         ),
       ),
       dividerTheme: const DividerThemeData(
-        // color: AppColors.borderLight,
+        color: AppColors.greyG400,
         thickness: 1,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -228,6 +228,7 @@ class AppThemes {
       ),
       colorScheme: colorScheme.copyWith(background: colorScheme.background),
       cardTheme: CardTheme(
+        surfaceTintColor: AppColors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),

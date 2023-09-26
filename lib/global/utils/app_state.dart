@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../models/failure.dart';
+import '../models/failure/failure.dart';
 
 part 'app_state.freezed.dart';
 

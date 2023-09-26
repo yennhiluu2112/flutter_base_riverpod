@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../models/app_settings/app_settings.dart';
-import '../models/failure.dart';
+import '../models/failure/failure.dart';
 import '../utils/constants.dart';
 
 final appSetingsRepositoryProvider = Provider(
