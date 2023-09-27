@@ -51,6 +51,7 @@ class PostTile extends StatelessWidget {
                 imageUrl: post.imageUrl ?? '',
                 height: 200,
                 width: double.infinity,
+                errorWidget: const SizedBox(),
               ),
             ),
             const SizedBox(height: 12),

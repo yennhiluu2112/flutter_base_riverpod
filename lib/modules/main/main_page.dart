@@ -18,6 +18,7 @@ class _MainPageState extends State<MainPage> {
     return AutoTabsRouter(
       routes: const [
         HomeRoute(),
+        AuthorsRoute(),
         SettingsRoute(),
       ],
       builder: (context, child) {
@@ -33,6 +34,11 @@ class _MainPageState extends State<MainPage> {
             selectedItemColor: AppColors.primary600,
             showUnselectedLabels: true,
             items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined),
+                activeIcon: Icon(Icons.home),
+                label: 'Home',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined),
                 activeIcon: Icon(Icons.home),

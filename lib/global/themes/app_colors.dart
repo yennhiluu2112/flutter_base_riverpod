@@ -4,6 +4,7 @@ class AppColors {
   AppColors._();
   static const backgroundLight = Color(0xFFFFFFFF);
   static const backgroundDark = Color(0xFF0F1624);
+  static const backgroundPost = Color.fromARGB(255, 244, 245, 252);
 
   static const primary400 = Color(0xFFA5C0F4);
   static const primary500 = Color(0xFF678DD6);

@@ -35,6 +35,11 @@ dependencies:
   shimmer: ^3.0.0
   cloud_firestore: ^4.9.2
   firebase_ui_firestore: ^1.5.11
+  firebase_storage: ^11.2.7
+  app_settings: ^5.1.1
+  device_info_plus: ^9.0.3
+  permission_handler: ^11.0.0
+  image_picker: ^1.0.4
   
 
 dev_dependencies:

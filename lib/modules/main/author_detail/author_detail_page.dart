@@ -2,33 +2,37 @@ import 'package:auto_route/auto_route.dart';
 import 'package:firebase_ui_firestore/firebase_ui_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_base_riverpod/global/models/user/user.dart';
-import 'package:flutter_base_riverpod/global/repositories/auth_repository.dart';
 import 'package:flutter_base_riverpod/global/repositories/post_repository.dart';
-import 'package:flutter_base_riverpod/global/routers/app_router.dart';
 import 'package:flutter_base_riverpod/global/themes/app_colors.dart';
-import 'package:flutter_base_riverpod/modules/main/home/widgets/post_tile.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../home/widgets/post_tile.dart';
+
 @RoutePage()
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({super.key});
+class AuthorDetailPage extends ConsumerStatefulWidget {
+  const AuthorDetailPage({
+    required this.user,
+    super.key,
+  });
+
+  final User user;
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  ConsumerState<AuthorDetailPage> createState() => _AuthorDetailPageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _AuthorDetailPageState extends ConsumerState<AuthorDetailPage> {
   @override
   Widget build(BuildContext context) {
-    final state = ref.watch(postRepositoryProvider);
-    final currentUser =
-        ref.watch(authRepositoryProvider).firebaseAuth.currentUser;
-
     return Scaffold(
       backgroundColor: AppColors.backgroundPost,
+      appBar: AppBar(),
       body: SafeArea(
         child: FirestoreQueryBuilder(
-          query: state.postRef.where('userId', isEqualTo: currentUser!.uid),
+          query: ref.watch(postRepositoryProvider).postRef.where(
+                'userId',
+                isEqualTo: widget.user.id,
+              ),
           builder: (context, snapshot, child) {
             if (snapshot.isFetching) {
               return const Center(child: CircularProgressIndicator());
@@ -41,23 +45,12 @@ class _HomePageState extends ConsumerState<HomePage> {
                 final post = snapshot.docs[index].data();
                 return PostTile(
                   post: post,
-                  user: User(
-                    email: currentUser.email,
-                    photoUrl: currentUser.photoURL,
-                    fullName: currentUser.displayName,
-                    id: currentUser.uid,
-                  ),
+                  user: widget.user,
                 );
               },
             );
           },
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.router.push(const UpsertPostRoute());
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }

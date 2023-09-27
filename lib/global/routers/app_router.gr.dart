@@ -51,6 +51,28 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const SignUpPage(),
       );
     },
+    AuthorsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AuthorsPage(),
+      );
+    },
+    AuthorDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<AuthorDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AuthorDetailPage(
+          user: args.user,
+          key: args.key,
+        ),
+      );
+    },
+    UpsertPostRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UpsertPostPage(),
+      );
+    },
   };
 }
 
@@ -134,6 +156,72 @@ class SignUpRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SignUpRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AuthorsPage]
+class AuthorsRoute extends PageRouteInfo<void> {
+  const AuthorsRoute({List<PageRouteInfo>? children})
+      : super(
+          AuthorsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthorsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AuthorDetailPage]
+class AuthorDetailRoute extends PageRouteInfo<AuthorDetailRouteArgs> {
+  AuthorDetailRoute({
+    required User user,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AuthorDetailRoute.name,
+          args: AuthorDetailRouteArgs(
+            user: user,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthorDetailRoute';
+
+  static const PageInfo<AuthorDetailRouteArgs> page =
+      PageInfo<AuthorDetailRouteArgs>(name);
+}
+
+class AuthorDetailRouteArgs {
+  const AuthorDetailRouteArgs({
+    required this.user,
+    this.key,
+  });
+
+  final User user;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AuthorDetailRouteArgs{user: $user, key: $key}';
+  }
+}
+
+/// generated route for
+/// [UpsertPostPage]
+class UpsertPostRoute extends PageRouteInfo<void> {
+  const UpsertPostRoute({List<PageRouteInfo>? children})
+      : super(
+          UpsertPostRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UpsertPostRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
